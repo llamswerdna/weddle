@@ -1,0 +1,994 @@
+/****** Wedding page CSS  ******/
+/* Copyright 2020 Andrew Small */
+
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=EB+Garamond&family=Montserrat:wght@300;400&family=Yeseva+One&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/* VARIABLES */
+  @body-color: #F9EFEF;
+  @head-background-color: #ffffff;
+  @text-color: #000000;
+  @link-color: #4f936c;
+  @headings-color: #1f394a;
+  @subheadings-color: @headings-color;
+  @card-background: #ffffff;
+  @menu-links: #072336;
+  @dropdown-background: #EEEEEE;
+
+  /* Fonts */
+  @signature-font: 'Dancing Script', cursive;
+  @body-font: 'Montserrat', sans-serif;
+  @menu-link-font: 'EB Garamond', serif;
+  @headings-font: 'Yeseva One', cursive;
+  @subheadings-font: 'EB Garamond', serif;
+
+  // Maps
+  @screen-size: {
+    max-mobile: 767.98px;
+    max-tablet: 991.98px;
+    max-desktop: 1024px;
+    min-tablet: 768px;
+    min-desktop: 992px;
+  }
+
+/* Reset Styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, /*details,*/ embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, /*details,*/ figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1; margin:0;padding:0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* clearfix */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+/******** MAIN STYLES ********/
+body {
+  background-color:@body-color;
+  color:@text-color;
+  font-family: @body-font;
+}
+
+* {
+  line-height:1.2;
+  box-sizing:border-box;
+}
+
+h1 {
+  font-family: @headings-font;
+  color: @headings-color;
+  font-weight: bold;
+  font-size:2em;
+  text-align:center;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: @subheadings-font;
+  color: @subheadings-color;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+
+    &.rec-category {
+      font-size: 1.20em;
+      padding: 17px;
+    }
+}
+
+a {
+  color: @link-color;
+}
+
+#head-top {
+  font-size:0.8em;
+  width:100%;
+  position:static;
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    display:none;
+  }
+}
+
+#head-wrap {
+  background-color:@head-background-color;
+  margin:0;
+  width:100%;
+  position:sticky;
+  top:0;
+  color:@text-color;
+  z-index:1000;
+}
+
+#wed-date {
+	/*position:relative;
+	top:20px;
+	left:30px;*/
+
+  float:left;
+  margin: 20px 0 0 30px;
+
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    left: 65px;
+  }
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    display:none;
+  }
+}
+
+#wed-hash {
+  /*position:fixed;
+	top:20px;
+	right:30px;*/
+
+  clear:both;
+  float:right;
+  margin: -12px 30px 0 0;
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    display:none;
+  }
+}
+
+#head-mid {
+  text-align:center;
+  font-size:2em;
+  padding:15px;
+  padding-bottom:8px;
+  font-weight:600;
+  font-family: @signature-font;
+  margin: 0 auto;
+  width:100%;
+
+  #logo-wrap {
+    display: table;
+    margin: 0 auto;
+
+    a {
+      text-decoration:none;
+      color: @headings-color;
+      vertical-align: middle;
+      display: table-cell;
+    }
+
+    img#logo-l {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    img {
+      @media only screen and (max-width: 645px) {
+        width:140px;
+      }
+      @media only screen and (max-width: 516px) {
+        width:100px;
+      }
+      @media only screen and (max-width: 500px) {
+        display:none;
+      }
+    }
+  }
+}
+
+#head-bot {
+  width:100%;
+  margin:0 auto;
+}
+
+#navigation {
+  text-align: center;
+  padding: 10px 0;
+  width:100%;
+  margin:0 auto;
+  display:block;
+
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    display:none;
+  }
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    position: absolute;
+    top:60px;
+    background-color: @head-background-color;
+  }
+
+  ul {
+    padding-left: 0 !important;
+
+    li {
+      float:left;
+      padding-bottom:0;
+      list-style-type:none;
+      text-align:center;
+      width:12.3%;
+
+      @media only screen and (max-width: @screen-size[max-tablet]) {
+        &.scroll-title {
+          height:0;
+          display:none !important;
+        }
+      }
+
+      @media only screen and (max-width: @screen-size[max-mobile]) {
+        float:none;
+        padding-bottom: 15px;
+        width:100%;
+      }
+
+      &.scroll-title a {
+        font-family: @signature-font !important;
+      }
+
+      a {
+        color: @menu-links;
+        font-family: @menu-link-font;
+        text-decoration:none;
+        font-variant:small-caps;
+        font-weight:500;
+        text-align:center;
+        margin:auto 0;
+        font-size: 1.25em;
+
+        @media only screen and (max-width: @screen-size[max-mobile]) {
+          font-size: 1.4em;
+          width:100%;
+        }
+
+        &:hover {
+          text-decoration:underline;
+        }
+      }
+    }
+  }
+}
+
+ul {
+  width:80%;
+  margin:0 auto;
+  text-align:center;
+}
+
+.mid-fix {
+  margin-top:10px;
+}
+
+#hero_img, #hero_img img {
+  width:100%;
+  max-width:100vw;
+  margin:-15px 0 10px 0;
+  z-index:-1;
+}
+
+.divider {
+  border-bottom:solid 1px #191919;
+  width:70%;
+  margin:0 auto;
+}
+
+main p {
+  text-align:center;
+}
+
+footer {
+  clear:both;
+  background-color: @head-background-color;
+
+
+  &#short-foot {
+    position:fixed;
+    bottom:0;
+    width:100%;
+
+    @media only screen and (max-width: @screen-size[max-mobile]) {
+      position:inherit;
+    }
+  }
+
+  #footer_img {
+    width:100%;
+    max-width: 100vw;
+  }
+
+  #copyright {
+    padding:20px;
+    font-size: 0.8em;
+
+    @media only screen and (max-width: @screen-size[max-mobile]) {
+      text-align: center;
+    }
+  }
+}
+
+
+
+#page-header h1 {
+  font-size:1.9em;
+  font-weight: 600;
+}
+
+strong {
+  font-weight:700;
+}
+
+p {
+  margin-top:11px;
+}
+
+article header h2 {
+  font-size:1.5em;
+  margin:25px 0 15px 0;
+  text-align:center;
+  font-weight:700;
+}
+
+/* Hamburger Menu */
+.icon {
+  display:none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 30px;
+  padding:8px 15px;
+  z-index: 2000;
+  i {
+    color: @menu-links;
+  }
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    display:inline-block;
+  }
+}
+
+/******** HEADER SCROLL CHANGES ********/
+html:not([data-scroll='0']) #head-wrap {
+   box-shadow:0px 1px 4px rgba(0,0,0,.25);
+ }
+
+.sticky-header #head-top, .sticky-header #head-mid {
+   display:none;
+   height:0;
+
+   @media only screen and (max-width: @screen-size[max-tablet]) {
+     #wed-date, #wed-hash {
+       display:none;
+     }
+   }
+ }
+
+.sticky-header #head-mid {
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    width:100%;
+    text-align: center;
+    display:inline-block;
+  }
+}
+
+
+.sticky-header #head-bot {
+   margin-top:10px !important;
+ }
+
+.scroll-title {
+   width:20% !important;
+
+   a {
+     font-variant:normal !important;
+     display:none;
+     font-family: @signature-font;
+     color: @headings-color !important;
+   }
+}
+
+.sticky-header {
+  .scroll-title a {
+    display:block;
+    font-weight:600 !important;
+    font-size:1.4em;
+    margin-top:8px;
+
+    &:hover {
+       text-decoration:none;
+    }
+  }
+
+  #navigation {
+    ul {
+      width:92%;
+      margin:0 auto;
+      padding:0;
+
+      li {
+        width:9%;
+
+        @media only screen and (max-width: @screen-size[max-mobile]) {
+          width:100%;
+        }
+
+      }
+    }
+  }
+}
+
+/******** HOMEPAGE ********/
+#wedding-details {
+  width:95%;
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
+  padding:70px;
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    padding:60px 10px;
+  }
+}
+
+#det-hash, #det-loc {
+  padding:30px;
+  font-size:1.2em;
+
+  a {
+    color:@text-color;
+    text-decoration: none;
+  }
+}
+
+#det-date {
+  font-size: 2.5em;
+}
+
+#our-story {
+  text-align:center;
+  padding:70px;
+  width:60%;
+  margin:0 auto;
+
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    width:70%;
+    padding: 40px;
+  }
+
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    width:95%;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size:2em;
+    margin:20px 20px 30px 20px;
+  }
+}
+
+.event {
+  header {
+    font-size:1.5em;
+    font-weight:600;
+    padding:0;
+  }
+
+  .date {
+    text-transform:uppercase;
+    font-weight:100;
+    font-size:.95em;
+  }
+
+  .story {
+    padding-top:15px;
+  }
+}
+
+#couple-names {
+  font-size: 4em;
+  margin:0 auto;
+  line-height: 1em;
+  width:100%;
+  text-align:center;
+  padding:100px;
+  font-family: @headings-font;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  span {
+    text-transform:uppercase;
+    font-size:.35em;
+    line-height:1em;
+    display: block;
+  }
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    padding: 50px;
+    font-size: 10vw;
+  }
+
+}
+
+img#name-bkg {
+  width: 650px;
+  max-width: 95%;
+}
+
+/******** REGISTRY PAGE ********/
+#registry {
+  margin:0 auto;
+  text-align:center;
+
+  img {
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 1px rgba(0, 0, 0, 0.19);
+    border:none;
+    background-color:#f8f8f8;
+    padding:10px;
+    margin:20px 50px;
+
+    &:nth-of-type(3) {
+      @media only screen and (max-width: @screen-size[max-mobile]) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  a {
+    border:none;
+    text-decoration:none;
+  }
+}
+
+/******** WEDDING PARTY PAGE  ********/
+#wedding-party {
+  width:100%;
+  max-width: 850px;
+  margin:0 auto;
+
+  heading {
+    font-weight:700;
+    font-size:1.5em;
+  }
+
+  figcaption {
+    font-variant:small-caps;
+    font-size:1.1em;
+    font-weight:100;
+    margin-bottom:12px;
+  }
+
+  figure {
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    border: 8px solid white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px;
+    background-size:350px;
+    background-position:center;
+    clear:left;
+    float:left;
+    margin:10px 0;
+
+    @media only screen and (max-width: @screen-size[max-mobile]) {
+      float:none;
+      clear: none;
+      margin:0 auto;
+    }
+
+  }
+
+  article {
+    clear:both;
+    text-align:center;
+    display:block;
+    margin:0 auto;
+    margin-top:90px;
+    padding:5px;
+
+    @media only screen and (max-width: @screen-size[max-mobile]) {
+      margin-top: 35px;
+    }
+  }
+
+  p {
+    /*font-style:italic;*/
+    margin-top:11px;
+
+    /*&:before {
+      content:'"';
+      font-style:italic;
+    }
+
+    &:after {
+      content:'"';
+      font-style:italic;
+    }*/
+  }
+}
+
+figure#carrie {
+ background-image:url('../images/carrie.jpg'); }
+figure#brittney {
+ background-image:url('../images/brittney.jpg'); }
+figure#shannon {
+ background-image:url('../images/shannon.jpg'); }
+figure#lyndsey {
+ background-image:url('../images/lyndsey.jpg'); }
+figure#becky {
+ background-image:url('../images/becky.jpg'); }
+figure#margaret {
+ background-image:url('../images/margaret.jpg'); }
+figure#hillary {
+ background-image:url('../images/hillary.jpg'); }
+figure#jen {
+ background-image:url('../images/jen.jpg'); }
+
+section.friend-bio {
+  float:right;
+  clear:right;
+  width:50%;
+  height:350px;
+  padding:10px;
+  display:table;
+
+  @media only screen and (max-width: @screen-size[max-mobile]) {
+    float:none;
+    clear: none;
+    height:auto;
+    margin:0 auto;
+    Width:90%;
+  }
+}
+
+.friend-bio div {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+/******** TRAVEL PAGE ********/
+#travel article, #schedule article, .card {
+  margin:40px auto;
+  width:90%;
+  max-width: 850px;
+  padding:25px;
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 1px rgba(0, 0, 0, 0.19);
+  min-height:125px;
+  background-color:@card-background;
+
+  p.signature {
+    font-family: @signature-font;
+    font-size: 1.5em;
+    font-weight:lighter;
+    margin-top: 18px;
+  }
+}
+
+#gal-container {
+  max-width: 1150px;
+  padding: 10px;
+
+  h1 {
+    margin: 15px auto;
+  }
+}
+
+#travel article iframe, #travel article img {
+  margin-top:30px;
+  width:100%; }
+
+summary {
+  margin-bottom: 8px; }
+
+summary:active, summary:focus, details:active, details:focus {
+  outline: none; }
+
+details {
+  margin-top:15px;
+
+  &:first-of-type {
+    margin-top:0;
+  }
+
+  .rec-deets {
+    width: 90%;
+    margin-left: 15px;
+    padding: 15px;
+    background-color: @dropdown-background;
+    box-shadow: 3px 3px 5px grey;
+    margin-bottom:8px;
+
+    img {
+      width: 100%;
+      max-width:640px;
+      margin:10px auto 0 auto;
+    }
+  }
+}
+
+/******** SCHEDULE PAGE ********/
+.event-time {
+  font-size:.8em;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.event-description {
+  font-size:1em;
+  margin-bottom:14px;
+}
+
+.event-location {
+  font-size:.9em;
+  font-weight:600;
+  margin-bottom: 8px;
+}
+
+/******** GALLERY PAGE ********/
+#gal-container {
+  text-align: center;
+
+  img {
+    border-radius: 20px;
+    margin:10px;
+
+    &:hover {
+      border-radius: 0;
+      filter: grayscale(90%);
+    }
+
+    transition: border-radius 2s, filter 1s;
+  }
+}
+
+/* Gallery Styles (adapted from W3Schools.com) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,.85);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+
+  &:hover, &:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+/* Hide the slides by default */
+.myPhotos {
+  display: none;
+  text-align: center;
+  background-color:transparent;
+
+  img {
+    height:500px;
+    max-height: 90%;
+    width:auto;
+    margin: 0 auto;
+
+    @media only screen and (max-width: @screen-size[max-tablet]) {
+      height:auto;
+      max-height:90vh;
+      max-width: 95vw;
+    }
+
+  }
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  padding: 2px 16px;
+  color: white;
+
+  #caption {
+    font-size: 1.1em;
+    margin-top: 5px;
+  }
+}
+
+.name-container {
+  position: relative;
+  text-align: center;
+}
+
+/* Alerts */
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+
+  @media only screen and (max-width: @screen-size[max-tablet]) {
+    padding-left: 60px;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    /* When moving the mouse over the close button */
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+/******** FAQs PAGE ********/
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-weight: 700;
+  font-size: 1.1em;
+
+  &:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  /*max-height: 0;
+  overflow:hidden;
+  transition: max-height 0.2s ease-out;*/
+
+  p {
+    text-align: left;
+    padding: 10px 5px 10px 5px;
+    margin: 0;
+  }
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}

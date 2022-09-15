@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weddle</title>
+    <script src="scripts/weddle-main.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/wedding-style.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  </head>
+  <body id="weddle">
+    <div id="container">
+      <div id="game">
+        <header>
+          <div id="hl">&nbsp;</div>
+          <div id="hc"><h1 class="title">Weddle</h1></div>
+        <div id="hr"><button onClick="window.location.reload();" title="New Word"><i class="fa fa-refresh" aria-hidden="true"></i> New</button></div>
+          </div>
+          <div id="messageBoxContainer">
+            <div id="messageBox" class="hidden">
+              Let's Start!
+            </div>
+            <div id="winner" class="hidden">
+              <i id="winnerClose" class="fa fa-times"></i>
+              <h2>Congratulations!</h2>
+              <p>You got the word <span id="winnerWord">bride</span> in <span id="winnerGuesses">4</span> guesses!</p>
+
+                <button id="shareBtn"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</button>
+            </div>
+            <div id="loser" class="hidden">
+              <i id="loserClose" class="fa fa-times"></i>
+              <h2>Sorry!</h2>
+              <p>You ran out of guesses! The word was <span id="loserWord">bride</span></p>
+
+                <button id="shareBtn"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</button>
+            </div>
+          </div>
+        </header>
+        <div id="board-container">
+            <div id="board">
+
+            </div>
+        </div>
+        <div id="keyboard-container">
+          <div class="keyboard-row">
+            <button data-key="q">q</button>
+            <button data-key="w">w</button>
+            <button data-key="e">e</button>
+            <button data-key="r">r</button>
+            <button data-key="t">t</button>
+            <button data-key="y">y</button>
+            <button data-key="u">u</button>
+            <button data-key="i">i</button>
+            <button data-key="o">o</button>
+            <button data-key="p">p</button>
+          </div>
+          <div class="keyboard-row">
+            <div class="spacer-half"></div>
+            <button data-key="a">a</button>
+            <button data-key="s">s</button>
+            <button data-key="d">d</button>
+            <button data-key="f">f</button>
+            <button data-key="g">g</button>
+            <button data-key="h">h</button>
+            <button data-key="j">j</button>
+            <button data-key="k">k</button>
+            <button data-key="l">l</button>
+            <div class="spacer-half"></div>
+          </div>
+          <div class="keyboard-row">
+            <button data-key="enter" class="wide-button">Enter</button>
+            <button data-key="z">z</button>
+            <button data-key="x">x</button>
+            <button data-key="c">c</button>
+            <button data-key="v">v</button>
+            <button data-key="b">b</button>
+            <button data-key="n">n</button>
+            <button data-key="m">m</button>
+            <button data-key="del" class="wide-button">Del</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F74P6XTYYJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-F74P6XTYYJ');
+    </script>
+  </body>
+</html>
